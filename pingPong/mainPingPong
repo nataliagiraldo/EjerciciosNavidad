@@ -1,0 +1,53 @@
+from Jugadores import registroJugador, ganadorCategoria
+from Partidas import registrarPartida, tablero
+
+jugadores = {}
+isActive = True
+
+while isActive:
+    print("\n1. Registrar jugador")
+    print("2. Registrar partida")
+    print("3. Mostrar tablero")
+    print("4. Mostrar ganador por categoría")
+    print("5. Salir")
+
+    opcion = input("Seleccione una opción (1-5): ")
+
+    if opcion == "1":
+        jugadores = registroJugador(jugadores)
+    elif opcion == "2":
+        if jugadores:
+            registrarPartida(jugadores)
+        else:
+            print("Primero registre otro")
+    elif opcion == "3":
+        if jugadores:
+            tablero(jugadores)
+        else:
+            print("Primero registre al menos un jugador.")
+    elif opcion == "4":
+        if jugadores:
+            ganadorCategoria(jugadores)
+        else:
+            print("Primero registre al menos un jugador.")
+    elif opcion == "5":
+        print("Saliendo del programa. ¡Hasta luego!")
+        isActive = False
+    else:
+        print("Opción no válida. Intente nuevamente.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
